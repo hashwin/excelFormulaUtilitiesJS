@@ -2,11 +2,11 @@
 (function() {
   var xl;
 
-  require('./src/core');
+  require("./src/core");
 
-  require('./src/ExcelFormulaUtilities');
+  require("./src/ExcelFormulaUtilities");
 
-  xl = excelFormulaUtilities;
+  xl = (window && window.excelFormulaUtilities) || excelFormulaUtilities;
 
   module.exports = {
     getTokens: function(f) {
@@ -20,5 +20,4 @@
     toCSharp: xl.formula2CSharp,
     toPython: xl.formula2Python
   };
-
-}).call(this);
+}.call(this));
